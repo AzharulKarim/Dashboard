@@ -3,17 +3,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
 
-try:
-    hours_dataset = pd.read_csv("dashboard/hour.csv")
-    st.write("File 'hour.csv' berhasil dimuat.")
-except FileNotFoundError:
-    st.error("File 'hour.csv' tidak ditemukan. Pastikan file ada di direktori yang benar.")
-try:
-    days_dataset = pd.read_csv("dashboard/day.csv")
-    st.write("File 'day.csv' berhasil dimuat.")
-except FileNotFoundError:
-    st.error("File 'day.csv' tidak ditemukan. Pastikan file ada di direktori yang benar.")    
-days_dataset = pd.read_csv("day.csv")
+
+hours_dataset = pd.read_csv("dashboard/hour.csv")
+days_dataset = pd.read_csv("dashboard/day.csv")
+
 
 season_cnt = days_dataset.groupby('season')['cnt'].sum().reset_index()
 weather_cnt = hours_dataset.groupby('weathersit')['cnt'].sum().reset_index()
