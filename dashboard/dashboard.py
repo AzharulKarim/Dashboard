@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
 
-#dashboard/
+#Jika saya deploy ke streamlit pada kolom hours_dataset, days_dataset, data_dashboard perlu ditambahin dashboard/
 hours_dataset = pd.read_csv("dashboard/hour.csv")
 days_dataset = pd.read_csv("dashboard/day.csv")
 data_dashboard = pd.read_csv("dashboard/all_data.csv")
